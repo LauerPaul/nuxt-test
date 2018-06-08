@@ -1,14 +1,14 @@
 const { resolve } = require('path')
 
 module.exports = {
-  rootDir: resolve(__dirname, './'),
+  rootDir: resolve(__dirname),
   buildDir: resolve(__dirname, '.nuxt'),
   srcDir: __dirname,
   /*
   ** Headers of the page
   */
   head: {
-    title: 'nuxt',
+    title: 'Nuxt test',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -41,15 +41,33 @@ module.exports = {
       }
     }
   },
-  modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', '@nuxtjs/auth'],
+  serverMiddleware: ['./api/auth'],
+  modules: [
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
+  ],
+  /* - - - - - - - - -*/
+  /*      PLUGINS     */
+  /* - - - - - - - - -*/
+  plugins: [
+    '~/plugins/log',
+    '~/plugins/docs',
+  ],
+  /* - - - - - - - - -*/
+  /*       AXIOS      */
+  /* - - - - - - - - -*/
   axios: {
-    proxy: true
+    proxy: false
   },
   proxy: {
     '/api': 'http://localhost:3000'
   },
+  /* - - - - - - - - -*/
+  /*       AUTH       */
+  /* - - - - - - - - -*/
   auth: {
-    plugins: [ '~/plugins/auth.js' ],
+    plugins: [ '~/plugins/auth' ],
     redirect: {
       callback: '/callback'
     },
