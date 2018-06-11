@@ -1,0 +1,43 @@
+b-navbar(toggleable="md", fixed="top")
+		button.navbar-toggler(type="button", onclick="_mt_()")
+			<i class="material-icons">menu</i>
+			|меню
+
+		b-navbar-brand(to="/")
+			img(src="~assets/images/froggy_tours.png", alt="Froggy Tour")
+		
+		template(v-if="!$auth.$state.loggedIn")
+			.nav-menu.d-flex.flex-nowrap.justify-content-end.align-items-center
+
+				a.item.mobile-hide(href="#", title="горящие туры").d-flex.align-items-center
+					span
+						i.icon.icon-fire
+						span.text горящие туры
+				a.item.mobile-hide(href="#", title="ранняя бронь").d-flex.align-items-center
+					span
+						i.icon.icon-calendar
+						span.text ранняя бронь
+				a.item(href="/contacts.html", title="контакты").d-flex.align-items-center
+					span
+						i.material-icons perm_phone_msg
+						span.text контакты
+				button(type="button", data-toggle="modal", data-target="#feedback", title="Помощь агента").item.other.line.d-flex.align-items-center
+					span
+						i.material-icons headset_mic
+						span.text помощь агента
+			a.navbar-brand.mobile(href="#")
+				img(src="/images/logo.png", alt="Froggy Tour")
+		
+		template(v-else)
+
+		//- b-collapse#nav_collapse(is-nav)
+		//- 	b-navbar-nav
+		//- 		b-nav-item(to="/", exact) Home
+		//- 		b-nav-item(to="/about") About
+		//- 	b-navbar-nav.ml-auto
+		//- 		template(v-if="$auth.$state.loggedIn")
+		//- 			b-nav-item-dropdown(:text="$auth.user.name", right)
+		//- 				b-dropdown-item(@click="$auth.logout()") Logout
+		//- 			b-img.mt-1(:src="picture", rounded="circle", width="30px", height="30px")
+		//- 		template(v-else)
+		//- 			b-dropdown-item(to="/login") Login
