@@ -8,9 +8,11 @@ export default {
 	components: {
 		'auth-case': Auth
 	},
-	data: function(){
-		return data
+	middleware: ['auth'],
+	options: {
+		auth: false
 	},
+	data: function(){ return data },
 	mounted: function(){
 		console.log(this.$auth.user);
 	},

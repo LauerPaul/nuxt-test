@@ -1,16 +1,15 @@
 import Auth from '~/components/auth'
 
+const data = {
+
+}
+
 export default {
 	middleware: ['auth'],
-	data: function(){
-		return {
-		}
+	options: {
+		auth: false
 	},
-	mounted: function(){
-	},
-	created() {
-		
-	},
+	data: function(){ return data },
 	components: {
 		'auth-case': Auth,
 	}
