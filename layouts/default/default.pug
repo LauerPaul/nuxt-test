@@ -1,6 +1,7 @@
-div
+div.body(:class="{ hm : !asideToggle_open }")
 	//- Header
 	header
+		include aside
 		include header
 	
 	//- Content

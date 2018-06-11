@@ -1,5 +1,5 @@
 b-navbar(toggleable="md", fixed="top")
-		button.navbar-toggler(type="button", onclick="_mt_()")
+		button.navbar-toggler(type="button", @click="asideToggle_open = !asideToggle_open")
 			<i class="material-icons">menu</i>
 			|меню
 
@@ -26,7 +26,7 @@ b-navbar(toggleable="md", fixed="top")
 						i.material-icons headset_mic
 						span.text помощь агента
 			a.navbar-brand.mobile(href="#")
-				img(src="/images/logo.png", alt="Froggy Tour")
+				img(src="~assets/images/froggy_tours.png", alt="Froggy Tour")
 		
 		template(v-else)
 

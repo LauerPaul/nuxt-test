@@ -8,9 +8,9 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
-    cache = require('gulp-cache');
-
-
+    cache = require('gulp-cache'),
+    fs = require('fs'),
+    cnf = JSON.parse(fs.readFileSync('./config.json'));
 
 /**
  * [Tasks]

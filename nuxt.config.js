@@ -41,6 +41,11 @@ module.exports = {
       }
     }
   },
+  css: [
+    // node.js module but we specify the lang
+    // { src: 'bulma', lang: 'sass' },
+    resolve(__dirname, 'assets/styles/styles.css')
+  ],
   serverMiddleware: ['./api/auth'],
   modules: [
     'bootstrap-vue/nuxt',

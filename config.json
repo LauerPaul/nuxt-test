@@ -1,27 +1,21 @@
 {
 	"path" : {
-		"app" : "app/",
-		"dst" : "build/",
+		"app" : "assets/_tmp/",
+		"dst" : "assets/",
 		"watch": {
 			"scss": "scss/**/*.scss",
-			"pug": "pug/**/*.*",
-			"js": "js/**/*.js",
-			"images": "images/**/*.*",
-			"font": "font/"
+			"images": "images/**/*.*"
 		},
 
 		"css": {
 			"in": "scss/*.scss",
 			"out": "styles/",
-			"sourcemap": "source/maps/",
-			"scss_source_in": "scss/**/*.*",
-			"scss_source_copy": "styles/source/scss/",
-			"gzip": "styles/gzip/"
+			"sourcemap": "maps/"
 		},
 		"images": {
 			"in": "images/**/*.*",
 			"out": "images/"
-		},
+		}
 	},
 
 
@@ -29,8 +23,7 @@
 		"css": {
 			"min": false,
 			"concat": false,
-			"sourcemap": true,
-			"scss_source_copy": true,
+			"sourcemap": true
 		}
 	}
 }

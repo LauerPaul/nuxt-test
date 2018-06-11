@@ -1,0 +1,75 @@
+//- .menu-mask
+#mask-menu
+aside.menu
+	.header
+		button.navbar-toggler(type="button", @click="asideToggle_open = !asideToggle_open")
+			<i class="material-icons">menu</i>
+			|меню
+		a.navbar-brand(href="#")
+			img(src="~assets/images/froggy_tours.png", alt="Froggy Tour")
+	.wrapper
+		nav
+			ul
+				li.active
+					a(href="#")
+						i.material-icons home
+						|Главная
+				li
+					a(href="#")
+						i.material-icons library_books
+						|Блог
+				li
+					a(href="/contacts.html")
+						i.material-icons perm_phone_msg
+						|Контакты
+				li.separator
+				li
+					a(href="#")
+						i.material-icons.fly-tours local_airport
+						|Авиа туры
+				li
+					a(href="#")
+						i.material-icons.bus-tours directions_bus
+						|Автобусные туры
+				li
+					a(href="#")
+						i.material-icons.ukraine-tours flag
+						|Туры по Украине
+				li.separator
+				li
+					a(href="#")
+						i.fab.fa-gratipay.events
+						|Праздники и события
+				li
+					a(href="#")
+						i.material-icons.corporation stars
+						|Для корпораций
+				li.separator
+				li
+					a(href="#")
+						i.fas.fa-plane.fly-tickets
+						|Авиа билеты
+				li
+					a(href="#")
+						i.fas.fa-bus.bus-tickets
+						|Автобусные билеты
+				li
+					a(href="#")
+						i.far.fa-file-alt.documents
+						|Подготовка документов
+				li.separator
+				li
+					a(href="#")
+						i.fas.fa-info-circle.about
+						|О нас
+				li
+					a(href="#")
+						i.far.fa-handshake.partners
+						|Сотрудничество
+				li.separator
+		.footer
+			a(href="#").terms Термины и условия
+			a(href="#").agree Пользовательское соглашение
+			.dev Сайт разработан в агенстве&nbsp;
+				a(href="#", target="_blank") "Lauer"
+			.copyright © 2018 Все права защищены
