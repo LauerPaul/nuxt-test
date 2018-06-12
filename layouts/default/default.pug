@@ -1,8 +1,10 @@
 div.body(:class="{ hm : !asideToggle_open }")
 	//- Header
 	header
-		include aside
 		include header
+
+	//- Aside menu
+	include aside
 	
 	//- Content
 	b-container.mt-4
