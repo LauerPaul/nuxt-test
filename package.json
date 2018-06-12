@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@mdi/font": "^2.4.85",
     "@nuxtjs/auth": "^4.5.1",
     "@nuxtjs/axios": "^5.3.1",
     "@vuedoc/md": "^1.2.2",
@@ -20,8 +21,12 @@
     "consola": "^1.4.1",
     "cookie": "^0.3.1",
     "fs": "0.0.1-security",
+    "install": "^0.11.0",
     "js-cookie": "^2.2.0",
+    "npm": "^6.1.0",
     "nuxt": "^1.0.0",
+    "perfect-scrollbar": "^1.4.0",
+    "vue-perfect-scrollbar": "^0.1.0",
     "vuejs-logger": "^1.4.0"
   },
   "devDependencies": {

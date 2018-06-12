@@ -39,7 +39,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: []
   },
   css: [
     // node.js module but we specify the lang
@@ -50,14 +51,14 @@ module.exports = {
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
-    '@nuxtjs/auth',
+    '@nuxtjs/auth'
   ],
   /* - - - - - - - - -*/
   /*      PLUGINS     */
   /* - - - - - - - - -*/
   plugins: [
     '~/plugins/log',
-    '~/plugins/docs',
+    '~/plugins/docs'
   ],
   /* - - - - - - - - -*/
   /*       AXIOS      */

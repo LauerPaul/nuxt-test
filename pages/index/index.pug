@@ -1,4 +1,6 @@
 div
-  auth-case
+  auth-case(v-if="!$auth.$state.loggedIn")
+  button(@click="$auth.logout()", v-else) Logout
   |User status:
   b-badge {{ $auth.$state.loggedIn ? 'Logged In' : 'Guest' }}
+  p User: {{ $auth.user }}

@@ -1,4 +1,6 @@
 @import "./variables/variables.scss";
-@import "./other/mixins.scss";
-@import "./other/google_fonts.scss";
+@import "./mixins/mixins.scss";
+@import "./fonts/fonts.scss";
+
+@import "./plugins/plugins.scss";
 @import "./common/common.scss";
