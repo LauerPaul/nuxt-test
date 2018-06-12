@@ -1,13 +1,13 @@
 div
-	//- .menu-mask
 	#mask-menu
+
 	aside.menu
 		.header
 			button.navbar-toggler(type="button", @click="asideToggle_open = !asideToggle_open")
-				<i class="material-icons">menu</i>
-				|меню
+				i.mdi.mdi-menu
+				|{{ text.menu }}
 			a.navbar-brand(href="#")
-				img(src="~assets/images/froggy_tours.png", alt="Froggy Tour")
+				img(:src="$store.state.logo", :alt="$store.state.logo_alt")
 		#asideMenu-scrollWrapper
 			.wrapper
-			
+				list-menu(v-if="default_list")

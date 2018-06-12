@@ -1,15 +1,17 @@
 import dotProp from 'dotprop'
-import Scrollbar from 'perfect-scrollbar'
 import asidMenu from '~/components/menu-aside'
 
 const data =  {
-                asideToggle_open: true,
-                
-              }
+  asideToggle_open: true,
+}
+
 export default  {
   data: function(){
 		return data
 	},
+  components: {
+    'aside-menu' : asidMenu,
+  },
   computed: {
     picture() {
       return  dotProp(this.$auth.user, 'picture') ||  // OpenID
@@ -18,7 +20,6 @@ export default  {
     }
   },
   mounted: function(){
-    
     this.$log.info();
   }
 

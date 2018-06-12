@@ -97,10 +97,17 @@ aside.menu {
 			}
 			
 			&.active {
-				a {
+				cursor: default;
+				
+				a,
+				span {
 					i {
 						color: $blue_;
 					}
+				}
+				
+				&:hover {
+					background: transparent;
 				}
 			}
 
@@ -114,7 +121,8 @@ aside.menu {
 				}
 			}
 
-			a {
+			a,
+			span {
 				color: rgb(17,17,17);
 				font-size: 14px;
 				text-decoration: none !important;
@@ -235,23 +243,36 @@ aside.menu {
 			color: hsl(0, 0%, 53.3%);
 			margin-right: 8px;
 			display: block;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
 		.agree {
 			color: hsl(0, 0%, 53.3%);	
 			margin-right: 8px;
 			display: block;
+			cursor: pointer;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
 		.copyright {
 			color: rgba(17,17,17,0.6);
+			cursor: default;
 		}
 
 		.dev {
 			margin-top: 12px;
+			cursor: default;
 			
-			a {
+			.link {
 				color: rgba(17,17,17,0.6);
+				cursor: pointer;
 				
 				&:hover {
 					text-decoration: none;

@@ -8261,8 +8261,13 @@ aside.menu {
         aside.menu ul li {
           padding: 5px 0;
           padding-left: 65px; } }
-      aside.menu ul li.active a i {
-        color: #32aad6; }
+      aside.menu ul li.active {
+        cursor: default; }
+        aside.menu ul li.active a i,
+        aside.menu ul li.active span i {
+          color: #32aad6; }
+        aside.menu ul li.active:hover {
+          background: transparent; }
       aside.menu ul li.separator {
         padding: 0px;
         border-bottom: 1px solid #eeeeee;
@@ -8270,22 +8275,26 @@ aside.menu {
         @media (max-width: 1200px) {
           aside.menu ul li.separator {
             margin: 8px 0; } }
-      aside.menu ul li a {
+      aside.menu ul li a,
+      aside.menu ul li span {
         color: #111111;
         font-size: 14px;
         text-decoration: none !important;
         outline: none !important; }
         @media (max-width: 1200px) {
-          aside.menu ul li a {
+          aside.menu ul li a,
+          aside.menu ul li span {
             font-size: 13px; } }
-        aside.menu ul li a i {
+        aside.menu ul li a i,
+        aside.menu ul li span i {
           color: #888888;
           position: absolute;
           left: 24px;
           font-size: 24px;
           line-height: 26px; }
           @media (max-width: 1200px) {
-            aside.menu ul li a i {
+            aside.menu ul li a i,
+            aside.menu ul li span i {
               font-size: 20px; } }
       aside.menu ul li:hover {
         background: #ebebeb; }
@@ -8356,18 +8365,27 @@ aside.menu {
     aside.menu .footer .terms {
       color: #888888;
       margin-right: 8px;
-      display: block; }
+      display: block;
+      cursor: pointer; }
+      aside.menu .footer .terms:hover {
+        text-decoration: underline; }
     aside.menu .footer .agree {
       color: #888888;
       margin-right: 8px;
-      display: block; }
+      display: block;
+      cursor: pointer; }
+      aside.menu .footer .agree:hover {
+        text-decoration: underline; }
     aside.menu .footer .copyright {
-      color: rgba(17, 17, 17, 0.6); }
+      color: rgba(17, 17, 17, 0.6);
+      cursor: default; }
     aside.menu .footer .dev {
-      margin-top: 12px; }
-      aside.menu .footer .dev a {
-        color: rgba(17, 17, 17, 0.6); }
-        aside.menu .footer .dev a:hover {
+      margin-top: 12px;
+      cursor: default; }
+      aside.menu .footer .dev .link {
+        color: rgba(17, 17, 17, 0.6);
+        cursor: pointer; }
+        aside.menu .footer .dev .link:hover {
           text-decoration: none;
           color: #32aad6; }
 

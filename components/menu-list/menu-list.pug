@@ -1,68 +1,18 @@
-nav
-	ul
-		li.active
-			a(href="#")
-				i.mdi.mdi-home
-				|Главная
-		li
-			a(href="#")
-				i.mdi.mdi-library-books
-				|Блог
-		li
-			a(href="/contacts.html")
-				i.mdi.mdi-phone-log
-				|Контакты
-		li.separator
-		li
-			a(href="#")
-				i.mdi.mdi-airplane.fly-tours
-				|Авиа туры
-		li
-			a(href="#")
-				i.mdi.mdi-bus.bus-tours
-				|Автобусные туры
-		li
-			a(href="#")
-				i.mdi.mdi-flag.ukraine-tours
-				|Туры по Украине
+div
+	nav
+		ul
+			li(v-for="item in menu", :class="[{ separator : item.separator }, (item.route_name ? (item.route_name === $route.name ? 'active' : false) : item.link === $route.path ? 'active' : false )]")
+				router-link(
+					v-if="!item.separator",
+					:to="(item.route_name ? { name: item.route_name } : item.link)",
+					:tag="(item.route_name ? (item.route_name === $route.name ? 'span' : 'a') : item.link === $route.path ? 'span' : 'a' )"
+				)
+					i(:class="item.icon")
+					|{{ item.title }}
 
-		li.separator
-
-		li
-			a(href="#")
-				i.mdi.mdi-heart-circle.events
-				|Праздники и события
-		li
-			a(href="#")
-				i.mdi.mdi-star-circle.corporation
-				|Для корпораций
-
-		li.separator
-		li
-			a(href="#")
-				i.mdi.mdi-airplane-takeoff.fly-tickets
-				|Авиа билеты
-		li
-			a(href="#")
-				i.mdi.mdi-bus-articulated-front.bus-tickets
-				|Автобусные билеты
-		li
-			a(href="#")
-				i.mdi.mdi-file-document.documents
-				|Подготовка документов
-		li.separator
-		li
-			a(href="#")
-				i.mdi.mdi-information.about
-				|О нас
-		li
-			a(href="#")
-				i.mdi.mdi-account-multiple.partners
-				|Сотрудничество
-		li.separator
-.footer
-	a(href="#").terms Термины и условия
-	a(href="#").agree Пользовательское соглашение
-	.dev Сайт разработан в агенстве&nbsp;
-		a(href="#", target="_blank") "Lauer"
-	.copyright © 2018 Все права защищены
+	.footer
+		span.terms {{ text.terms_link }}
+		span.agree {{ text.agree_link }}
+		.dev {{ text.developer_info }}
+			span.link(@click="devLinkOpen") "Lauer"
+		.copyright © {{ year }} {{ text.right }}

@@ -4,7 +4,7 @@ b-navbar(toggleable="md", fixed="top")
 			|меню
 
 		b-navbar-brand(to="/")
-			img(src="~assets/images/froggy_tours.png", alt="Froggy Tour")
+			img(:src="$store.state.logo", :alt="$store.state.logo_alt")
 		
 		template(v-if="!$auth.$state.loggedIn")
 			.nav-menu.d-flex.flex-nowrap.justify-content-end.align-items-center
