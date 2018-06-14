@@ -1,7 +1,7 @@
 b-navbar(toggleable="md", fixed="top")
 		button.navbar-toggler(type="button", @click="asideToggle_open = !asideToggle_open")
 			<i class="material-icons">menu</i>
-			|меню
+			|{{ text.menu }}
 
 		b-navbar-brand(to="/")
 			img(:src="$store.state.logo", :alt="$store.state.logo_alt")

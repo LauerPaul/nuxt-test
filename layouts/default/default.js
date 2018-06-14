@@ -16,8 +16,13 @@ const data =  {
 	* @namespace Layout Default Data{}
 	*
 	* @property {boolean} asideToggle_open - Aside menu visibility status
+	* @property {object} text - Текста компонента
+	* 	@property {string} text.menu - Текст под кнопкой меню
 	*/
 	asideToggle_open: true,
+	text: {
+		menu: 'меню',
+	}
 }
 
 /** Export component */
