@@ -1,26 +1,65 @@
+/**
+* @version 1.0 beta
+* @module Layout_Default
+* @desc Layout Default
+* @see ~/layouts/default
+*
+* @author Pavel Uhrynovych (Lauer)
+* @copyright 2018:copyright:lauer.agency
+*/
+
 import dotProp from 'dotprop'
 import asidMenu from '~/components/menu-aside'
 
 const data =  {
-  asideToggle_open: true,
+	/**
+	* @namespace Layout Default Data{}
+	*
+	* @property {boolean} asideToggle_open - Aside menu visibility status
+	*/
+	asideToggle_open: true,
 }
 
+/** Export component */
 export default  {
-  data: function(){
-		return data
-	},
-  components: {
-    'aside-menu' : asidMenu,
-  },
-  computed: {
-    picture() {
-      return  dotProp(this.$auth.user, 'picture') ||  // OpenID
-              dotProp(this.$auth.user, 'picture.data.url') || // Facebook graph API
-              dotProp(this.$auth.user, 'avatar_url') // Github
-    }
-  },
-  mounted: function(){
-    this.$log.info();
-  }
 
+	// Set data
+	data: function(){ return data },
+
+	/**
+	* This layout requires the components:
+	* [menu-aside]{@link module:Component_Menu-aside}, 
+	*/
+	components: {
+		'aside-menu' : asidMenu,
+	},
+
+
+	/**
+	* >>> 
+	* Hook reporting
+	* @event module:Layout_Default~Layout Default computed
+	*/
+	computed: {
+		picture() {
+			return  dotProp(this.$auth.user, 'picture') ||  // OpenID
+							dotProp(this.$auth.user, 'picture.data.url') || // Facebook graph API
+							dotProp(this.$auth.user, 'avatar_url') // Github
+		}
+	},
+
+	/**
+	* >>> 
+	* Hook reporting
+	* @event module:Layout_Default~Layout Default mounted
+	*/
+	mounted: function(){
+		// Log mounted hook
+		this.$log.info('layout \'default\' -> mounted');
+	},
+
+	// Methods
+	methods: {
+		
+	}
 }

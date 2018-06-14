@@ -1,19 +1,42 @@
-import busyOverlay from '~/components/busy-overlay'
+/**
+* @version 1.0 beta
+* @module Component_Auth
+* @desc Component Auth
+* @see ~/components/auth
+*
+* @author Pavel Uhrynovych (Lauer)
+* @copyright 2018:copyright:lauer.agency
+*/
 
 const data = {
+	/**
+	* @namespace Component_Auth~Component Auth Data{}
+	*
+	* @property {string} username - reserved
+	* @property {string} password - reserved
+	* @property {null|string} error - reserved
+	*/
 	username: '',
 	password: '123',
 	error: null
 }
 
+/** Export component */
 export default {
+
+	// Set data
+	data: function(){ return data },
+
+	// Middleware
 	middleware: ['auth'],
 	components: {
-		busyOverlay
 	},
-	data: function(){
-		return data
-	},
+	
+	/**
+	* >>> 
+	* Hook reporting
+	* @event module:Component_Auth~Component Auth computed
+	*/
 	computed: {
 		strategies: () => ([
 		 { key: 'auth0', name: 'Auth0', color: '#ec5425' },
@@ -31,7 +54,24 @@ export default {
 		  return Boolean(this.$route.query.callback)
 		}
 	},
+
+	/**
+	* >>> 
+	* Hook reporting
+	* @event module:Component_Auth~Component Auth mounted
+	*/
+	mounted: function(){
+		// Log mounted hook
+		this.$log.info('component \'auth\' -> mounted');
+	},
+
+	// Methods
 	methods: {
+		/**
+		*	Отправка данных для авторизации
+		*	@method login
+		*	@async
+		**/
 		async login() {
 	      this.error = null
 

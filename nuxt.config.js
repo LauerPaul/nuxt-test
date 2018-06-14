@@ -57,8 +57,7 @@ module.exports = {
   /*      PLUGINS     */
   /* - - - - - - - - -*/
   plugins: [
-    '~/plugins/log',
-    '~/plugins/docs'
+    '~/plugins/log'
   ],
   /* - - - - - - - - -*/
   /*       AXIOS      */

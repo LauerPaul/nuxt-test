@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "jsdoc": "rm -rf /jsdoc && node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "@mdi/font": "^2.4.85",
@@ -51,12 +52,15 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
     "imagemin-pngquant": "^5.1.0",
+    "jsdoc": "^3.5.5",
+    "jsdoc-vuedoc": "^1.1.0",
     "jsdom": "^11.11.0",
     "node-sass": "^4.9.0",
     "nuxt-class-component": "^1.2.1",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "sass-loader": "^7.0.3",
-    "standard-version": "latest"
+    "standard-version": "latest",
+    "vue-docgen-api": "^2.3.11"
   }
 }
